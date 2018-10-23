@@ -51,9 +51,6 @@ app.get("/scrape", function(req, res) {
         .siblings("div.story-txt")
         .find("p")
         .text();
-
-      console.log(result.title);
-
       // Create a new Article using the `result` object built from scraping
       db.Article.create(result)
         .then(function(dbArticle) {
